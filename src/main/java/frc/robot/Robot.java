@@ -109,6 +109,7 @@ public class Robot extends TimedRobot {
     double autoTimeElapsed = Timer.getFPGATimestamp() - autoStart;
     if(goForAuto){
       //series of timed events making up the flow of auto
+      //2 ball auton right center
 
       if(autoTimeElapsed < 1){
         arm.set(0.2);
@@ -117,33 +118,35 @@ public class Robot extends TimedRobot {
       else if(autoTimeElapsed < 2){
         arm.set(0.0);
         drive.arcadeDrive(-0.47, 0);
-        /*driveLeftA.set(-0.22);
-        driveRightA.set(-0.22);*/
         //sets robot infront of a ball = to 45 in
       }
       else if(autoTimeElapsed < 3 && autoTimeElapsed > 2){
         arm.set(0.15);
-        intake.set(0.7);
+        intake.set(0.72);
         drive.arcadeDrive(-0.4, 0);
-        /*driveLeftA.set(-0.05);
-        driveRightA.set(-0.05);*/
       }
       else if(autoTimeElapsed < 4.7 && autoTimeElapsed > 2.7){
         arm.set(0);
-        intake.set(0);
+        intake.set(0.5);
         //need to change values for room due to bad carpet
-        drive.arcadeDrive(0.1, -0.402);
-        /*driveLeftA.set(-0.2);
-        driveRightA.set(0.2);*/
+        drive.arcadeDrive(0.1, 0.4);
       }
-      else if(autoTimeElapsed < 8 && autoTimeElapsed > 4.7){
-        arm.set(-0.35);
-        drive.arcadeDrive(-0.445, 0);
-        /*driveLeftA.set(-0.12);
-        driveRightA.set(-0.12);*/
+      else if(autoTimeElapsed < 8.3 && autoTimeElapsed > 4.7){
+        intake.set(0);
+        arm.set(0);
+        drive.arcadeDrive(-0.4, 0);
       }
-      else if(autoTimeElapsed < 10 && autoTimeElapsed > 9){
-        arm.set(-0.5);
+      else if(autoTimeElapsed < 8.91 && autoTimeElapsed > 8.3){
+        drive.arcadeDrive(0.1, 0.4);
+        intake.set(0);
+        arm.set(0);
+      }
+      else if(autoTimeElapsed < 11 && autoTimeElapsed > 8.91){
+        arm.set(-0.4);
+        drive.arcadeDrive(-0.4, 0);
+      }
+      else if(autoTimeElapsed < 12 && autoTimeElapsed > 11){
+        arm.set(Constants.arm.armHoldUp);
         drive.arcadeDrive(0, 0);
         intake.set(-1);
       }
@@ -152,14 +155,46 @@ public class Robot extends TimedRobot {
         drive.arcadeDrive(0, 0);
         intake.set(0);
       }
-      /*else if(autoTimeElapsed < 6 && autoTimeElapsed > 4){
-        driveLeftA.set(-0.15);
-        driveRightA.set(-0.15);
-        arm.set(0.22);
-        intake.set(-0.5);
-      }
-      */
     }
+    /*if(goForAuto){
+      //series of timed events making up the flow of auto
+      //2 ball auton for left side of the field
+
+      if(autoTimeElapsed < 1){
+        arm.set(0.2);
+        //gets intake in middle position
+      }
+      else if(autoTimeElapsed < 2){
+        arm.set(0.0);
+        drive.arcadeDrive(-0.47, 0);
+        //sets robot infront of a ball = to 45 in
+      }
+      else if(autoTimeElapsed < 3 && autoTimeElapsed > 2){
+        arm.set(0.15);
+        intake.set(0.72);
+        drive.arcadeDrive(-0.4, 0);
+      }
+      else if(autoTimeElapsed < 4.7 && autoTimeElapsed > 2.7){
+        arm.set(0);
+        intake.set(0);
+        //need to change values for room due to bad carpet
+        drive.arcadeDrive(0.1, -0.402);
+      }
+      else if(autoTimeElapsed < 8 && autoTimeElapsed > 4.7){
+        arm.set(-0.4);
+        drive.arcadeDrive(-0.445, 0);
+      }
+      else if(autoTimeElapsed < 11 && autoTimeElapsed > 9){
+        arm.set(Constants.arm.armHoldUp);
+        drive.arcadeDrive(0, 0);
+        intake.set(-1);
+      }
+      else{
+        arm.set(Constants.arm.armHoldUp);
+        drive.arcadeDrive(0, 0);
+        intake.set(0);
+      }
+    }*/
     /*if(goForAuto){
       //series of timed events making up the flow of auto
       
