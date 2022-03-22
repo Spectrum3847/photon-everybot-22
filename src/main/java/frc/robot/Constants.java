@@ -20,7 +20,7 @@ public class Constants {
   public static class arm{
     //Constants for controlling the arm. consider tuning these for your particular robot
     public final static int armnumber = 30;
-    public final static double armHoldUp = -0.03;
+    public final static double armHoldUp = 0.03;
     public final static double armHoldDown = 0.22;
     public final static double armTravel = 0.5;
     public final static double armTravelup = -1;

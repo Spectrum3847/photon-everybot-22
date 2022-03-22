@@ -107,7 +107,7 @@ public class Robot extends TimedRobot {
     
     //get time since start of auto
     double autoTimeElapsed = Timer.getFPGATimestamp() - autoStart;
-    if(goForAuto){
+    /*if(goForAuto){
       //series of timed events making up the flow of auto
       //2 ball auton right center
 
@@ -146,17 +146,17 @@ public class Robot extends TimedRobot {
         drive.arcadeDrive(-0.4, 0);
       }
       else if(autoTimeElapsed < 12 && autoTimeElapsed > 11){
-        arm.set(Constants.arm.armHoldUp);
+        arm.set(-0.03);
         drive.arcadeDrive(0, 0);
         intake.set(-1);
       }
       else{
-        arm.set(Constants.arm.armHoldUp);
+        arm.set(-0.03);
         drive.arcadeDrive(0, 0);
         intake.set(0);
       }
-    }
-    /*if(goForAuto){
+    }*/
+    if(goForAuto){
       //series of timed events making up the flow of auto
       //2 ball auton for left side of the field
 
@@ -164,12 +164,12 @@ public class Robot extends TimedRobot {
         arm.set(0.2);
         //gets intake in middle position
       }
-      else if(autoTimeElapsed < 2){
+      else if(autoTimeElapsed < 1.8){
         arm.set(0.0);
         drive.arcadeDrive(-0.47, 0);
         //sets robot infront of a ball = to 45 in
       }
-      else if(autoTimeElapsed < 3 && autoTimeElapsed > 2){
+      else if(autoTimeElapsed < 3 && autoTimeElapsed > 1.8){
         arm.set(0.15);
         intake.set(0.72);
         drive.arcadeDrive(-0.4, 0);
@@ -178,23 +178,23 @@ public class Robot extends TimedRobot {
         arm.set(0);
         intake.set(0);
         //need to change values for room due to bad carpet
-        drive.arcadeDrive(0.1, -0.402);
+        drive.arcadeDrive(0.1, -0.408);
       }
       else if(autoTimeElapsed < 8 && autoTimeElapsed > 4.7){
         arm.set(-0.4);
         drive.arcadeDrive(-0.445, 0);
       }
       else if(autoTimeElapsed < 11 && autoTimeElapsed > 9){
-        arm.set(Constants.arm.armHoldUp);
+        arm.set(-0.03);
         drive.arcadeDrive(0, 0);
         intake.set(-1);
       }
       else{
-        arm.set(Constants.arm.armHoldUp);
+        arm.set(-0.03);
         drive.arcadeDrive(0, 0);
         intake.set(0);
       }
-    }*/
+    }
     /*if(goForAuto){
       //series of timed events making up the flow of auto
       
